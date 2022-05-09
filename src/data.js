@@ -1,5 +1,6 @@
 const dataRow1 = [
   {
+    keycode: "Backquote",
     rus: {
       down: "ё",
       up: "Ё",
@@ -15,6 +16,7 @@ const dataRow1 = [
   },
 
   {
+    keycode: "Digit1",
     rus: {
       down: "1",
       up: "!",
@@ -29,6 +31,7 @@ const dataRow1 = [
     },
   },
   {
+    keycode: "Digit2",
     rus: {
       down: "2",
       up: "@",
@@ -43,6 +46,7 @@ const dataRow1 = [
     },
   },
   {
+    keycode: "Digit3",
     rus: {
       down: "3",
       up: "#",
@@ -57,11 +61,27 @@ const dataRow1 = [
     },
   },
   {
+    keycode: "Digit4",
     rus: {
       down: "4",
       up: "$",
       capslock: "4",
       shift_capslock: "$",
+    },
+    eng: {
+      down: "4",
+      up: "$",
+      capslock: "4",
+      shift_capslock: "$",
+    },
+  },
+  {
+    keycode: "Digit5",
+    rus: {
+      down: "5",
+      up: "%",
+      capslock: "5",
+      shift_capslock: "%",
     },
     eng: {
       down: "5",
@@ -71,6 +91,7 @@ const dataRow1 = [
     },
   },
   {
+    keycode: "Digit6",
     rus: {
       down: "6",
       up: "^",
@@ -85,6 +106,7 @@ const dataRow1 = [
     },
   },
   {
+    keycode: "Digit7",
     rus: {
       down: "7",
       up: "&",
@@ -99,6 +121,7 @@ const dataRow1 = [
     },
   },
   {
+    keycode: "Digit8",
     rus: {
       down: "8",
       up: "*",
@@ -113,6 +136,7 @@ const dataRow1 = [
     },
   },
   {
+    keycode: "Digit9",
     rus: {
       down: "9",
       up: "(",
@@ -127,20 +151,22 @@ const dataRow1 = [
     },
   },
   {
+    keycode: "Digit0",
     rus: {
-      down: "10",
+      down: "0",
       up: ")",
-      capslock: "10",
+      capslock: "0",
       shift_capslock: ")",
     },
     eng: {
-      down: "10",
+      down: "0",
       up: ")",
-      capslock: "10",
+      capslock: "0",
       shift_capslock: ")",
     },
   },
   {
+    keycode: "Minus",
     rus: {
       down: "-",
       up: "_",
@@ -155,6 +181,7 @@ const dataRow1 = [
     },
   },
   {
+    keycode: "Equal",
     rus: {
       down: "=",
       up: "+",
@@ -169,6 +196,7 @@ const dataRow1 = [
     },
   },
   {
+    keycode: "Backspace",
     rus: {
       down: "Backspace",
       up: "Backspace",
@@ -186,6 +214,7 @@ const dataRow1 = [
 
 const dataRow2 = [
   {
+    keycode: "Tab",
     rus: {
       down: "TAB",
       up: "TAB",
@@ -201,6 +230,7 @@ const dataRow2 = [
   },
 
   {
+    keycode: "KeyQ",
     rus: {
       down: "й",
       up: "Й",
@@ -215,6 +245,22 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "KeyW",
+    rus: {
+      down: "ц",
+      up: "Ц",
+      capslock: "Ц",
+      shift_capslock: "ц",
+    },
+    eng: {
+      down: "w",
+      up: "W",
+      capslock: "W",
+      shift_capslock: "w",
+    },
+  },
+  {
+    keycode: "KeyE",
     rus: {
       down: "у",
       up: "У",
@@ -229,6 +275,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "KeyR",
     rus: {
       down: "к",
       up: "К",
@@ -243,6 +290,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "KeyT",
     rus: {
       down: "е",
       up: "Е",
@@ -257,6 +305,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "KeyY",
     rus: {
       down: "н",
       up: "Н",
@@ -271,6 +320,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "KeyU",
     rus: {
       down: "г",
       up: "Г",
@@ -285,6 +335,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "KeyI",
     rus: {
       down: "ш",
       up: "Ш",
@@ -299,6 +350,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "KeyO",
     rus: {
       down: "щ",
       up: "Щ",
@@ -313,6 +365,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "KeyP",
     rus: {
       down: "з",
       up: "З",
@@ -327,6 +380,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "BracketLeft",
     rus: {
       down: "х",
       up: "Х",
@@ -341,6 +395,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "BracketRight",
     rus: {
       down: "ъ",
       up: "Ъ",
@@ -355,6 +410,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "Backslash",
     rus: {
       down: "&#47;",
       up: "/",
@@ -369,6 +425,7 @@ const dataRow2 = [
     },
   },
   {
+    keycode: "Delete",
     rus: {
       down: "DEL",
       up: "DEL",
@@ -386,6 +443,7 @@ const dataRow2 = [
 
 const dataRow3 = [
   {
+    keycode: "CapsLock",
     rus: {
       down: "CapcLock",
       up: "CapcLock",
@@ -401,6 +459,7 @@ const dataRow3 = [
   },
 
   {
+    keycode: "KeyA",
     rus: {
       down: "ф",
       up: "Ф",
@@ -415,6 +474,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "KeyS",
     rus: {
       down: "ы",
       up: "Ы",
@@ -429,6 +489,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "KeyD",
     rus: {
       down: "в",
       up: "В",
@@ -443,6 +504,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "KeyF",
     rus: {
       down: "а",
       up: "А",
@@ -457,6 +519,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "KeyG",
     rus: {
       down: "п",
       up: "П",
@@ -471,6 +534,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "KeyH",
     rus: {
       down: "р",
       up: "р",
@@ -485,6 +549,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "KeyJ",
     rus: {
       down: "о",
       up: "О",
@@ -499,6 +564,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "KeyK",
     rus: {
       down: "л",
       up: "Л",
@@ -513,6 +579,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "KeyL",
     rus: {
       down: "д",
       up: "Д",
@@ -527,6 +594,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "Semicolon",
     rus: {
       down: "ж",
       up: "Ж",
@@ -541,6 +609,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "Quote",
     rus: {
       down: "э",
       up: "Э",
@@ -555,6 +624,7 @@ const dataRow3 = [
     },
   },
   {
+    keycode: "Enter",
     rus: {
       down: "Enter",
       up: "Enter",
@@ -572,6 +642,7 @@ const dataRow3 = [
 
 const dataRow4 = [
   {
+    keycode: "ShiftLeft",
     rus: {
       down: "Shift",
       up: "Shift",
@@ -587,6 +658,7 @@ const dataRow4 = [
   },
 
   {
+    keycode: "KeyZ",
     rus: {
       down: "я",
       up: "Я",
@@ -601,6 +673,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "KeyX",
     rus: {
       down: "ч",
       up: "Ч",
@@ -615,6 +688,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "KeyC",
     rus: {
       down: "c",
       up: "C",
@@ -629,6 +703,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "KeyV",
     rus: {
       down: "м",
       up: "М",
@@ -643,6 +718,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "KeyB",
     rus: {
       down: "и",
       up: "И",
@@ -657,6 +733,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "KeyN",
     rus: {
       down: "т",
       up: "Т",
@@ -671,6 +748,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "KeyM",
     rus: {
       down: "ь",
       up: "Ь",
@@ -685,6 +763,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "Comma",
     rus: {
       down: "б",
       up: "Б",
@@ -699,6 +778,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "Period",
     rus: {
       down: "ю",
       up: "Ю",
@@ -713,6 +793,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "Slash",
     rus: {
       down: ".",
       up: ",",
@@ -727,6 +808,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "ArrowUp",
     rus: {
       down: "&#8593;",
       up: "&#8593;",
@@ -741,6 +823,7 @@ const dataRow4 = [
     },
   },
   {
+    keycode: "ShiftRight",
     rus: {
       down: "Shift",
       up: "Shift",
@@ -757,6 +840,7 @@ const dataRow4 = [
 ];
 const dataRow5 = [
   {
+    keycode: "ControlLeft",
     rus: {
       down: "Ctrl",
       up: "Ctrl",
@@ -772,6 +856,7 @@ const dataRow5 = [
   },
 
   {
+    keycode: "OSLeft",
     rus: {
       down: "Win",
       up: "Win",
@@ -786,6 +871,7 @@ const dataRow5 = [
     },
   },
   {
+    keycode: "AltLeft",
     rus: {
       down: "Alt",
       up: "Alt",
@@ -800,6 +886,7 @@ const dataRow5 = [
     },
   },
   {
+    keycode: "Space",
     rus: {
       down:
         "&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;",
@@ -822,6 +909,7 @@ const dataRow5 = [
     },
   },
   {
+    keycode: "AltRight",
     rus: {
       down: "Alt",
       up: "Alt",
@@ -836,6 +924,7 @@ const dataRow5 = [
     },
   },
   {
+    keycode: "ArrowLeft",
     rus: {
       down: "&#8592;",
       up: "&#8592;",
@@ -850,6 +939,7 @@ const dataRow5 = [
     },
   },
   {
+    keycode: "ArrowDown",
     rus: {
       down: "&#8595;",
       up: "&#8595;",
@@ -864,6 +954,7 @@ const dataRow5 = [
     },
   },
   {
+    keycode: "ArrowRight",
     rus: {
       down: "&#8594;",
       up: "&#8594;",
@@ -878,6 +969,7 @@ const dataRow5 = [
     },
   },
   {
+    keycode: "ControlRight",
     rus: {
       down: "Ctrl",
       up: "Ctrl",

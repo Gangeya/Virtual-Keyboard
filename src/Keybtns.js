@@ -1,8 +1,8 @@
 export class Keybtns {
-  constructor({ rus, eng }) {
-    console.log(rus, eng);
+  constructor({ keycode, rus, eng }) {
     this.rus = rus;
     this.eng = eng;
+    this.keycode = keycode;
   }
 
   //Key generator
@@ -10,7 +10,7 @@ export class Keybtns {
     let template = "";
 
     let key = document.createElement("div");
-    key.className = "key";
+    key.className = `key ${this.keycode}`;
     //key.setAttribute("data-id", this.id);
 
     template += `<span class="rus hidden">
