@@ -1257,9 +1257,10 @@ window.onload = function () {
           _iterator4.f();
         }
       }
+
+      return;
     }
 
-    return;
     textArea.setRangeText(e.target.innerHTML, textArea.selectionStart, textArea.selectionEnd, "end"); //console.log(e.target.innerHTML);
   });
   document.addEventListener("mouseup", function (e) {
