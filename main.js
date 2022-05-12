@@ -254,7 +254,7 @@ var dataRow1 = [{
   eng: {
     down: "Backspace",
     up: "Backspace",
-    capslock: "Backspace1",
+    capslock: "Backspace",
     shift_capslock: "Backspace"
   }
 }];
@@ -472,16 +472,16 @@ var dataRow2 = [{
 var dataRow3 = [{
   keycode: "CapsLock",
   rus: {
-    down: "CapcLock",
-    up: "CapcLock",
-    capslock: "CapcLock",
-    shift_capslock: "CapcLock"
+    down: "CapsLock",
+    up: "CapsLock",
+    capslock: "CapsLock",
+    shift_capslock: "CapsLock"
   },
   eng: {
-    down: "CapcLock",
-    up: "CapcLock",
-    capslock: "CapcLock",
-    shift_capslock: "CapcLock"
+    down: "CapsLock",
+    up: "CapsLock",
+    capslock: "CapsLock",
+    shift_capslock: "CapsLock"
   }
 }, {
   keycode: "KeyA",
@@ -880,16 +880,16 @@ var dataRow5 = [{
 }, {
   keycode: "Space",
   rus: {
-    down: "&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;",
-    up: "&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;",
-    capslock: "&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;",
-    shift_capslock: "&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"
+    down: "Space",
+    up: "Space",
+    capslock: "Space",
+    shift_capslock: "Space"
   },
   eng: {
-    down: "&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;",
-    up: "&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;",
-    capslock: "&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;",
-    shift_capslock: "&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"
+    down: "Space",
+    up: "Space",
+    capslock: "Space",
+    shift_capslock: "Space"
   }
 }, {
   keycode: "AltRight",
@@ -1108,7 +1108,23 @@ window.onload = function () {
 
     if (e.key === "Alt") {
       e.preventDefault();
-    }
+    } // if (e.key === "CapsLock") {
+    //   if (lang == "en") {
+    //     const enKeys = document.querySelectorAll(".eng");
+    //     for (let key of enKeys) {
+    //       key.querySelector(".caseDown").classList.toggle("hidden");
+    //       key.querySelector(".caps").classList.toggle("hidden");
+    //     }
+    //   } else {
+    //     const enKeys = document.querySelectorAll(".rus");
+    //     for (let key of enKeys) {
+    //       key.querySelector(".caseDown").classList.toggle("hidden");
+    //       key.querySelector(".caps").classList.toggle("hidden");
+    //     }
+    //   }
+    //   return;
+    // }
+
 
     var pressed = document.querySelector(".".concat(e.code));
     pressed.classList.add("pressed");
@@ -1117,32 +1133,235 @@ window.onload = function () {
     //console.log("keyup", e.code);
     var unpressed = document.querySelector(".".concat(e.code));
     unpressed.classList.remove("pressed");
+  });
+  document.addEventListener("mousedown", function (e) {
+    if (e.target.tagName === "SPAN") {
+      e.preventDefault();
+    }
+
+    if (e.target.tagName !== "SPAN" || e.target.innerHTML === "Ctrl" || e.target.innerHTML === "Alt" || e.target.innerHTML === "Win") {
+      return;
+    }
+
+    if (e.target.innerHTML === "TAB") {
+      e.preventDefault();
+      textArea.setRangeText("\t", textArea.selectionStart, textArea.selectionEnd, "end");
+    }
+
+    if (e.target.innerHTML === "Backspace") {
+      if (textArea.selectionStart == 0) {
+        return;
+      }
+
+      e.preventDefault();
+      textArea.setRangeText("", textArea.selectionStart - 1, textArea.selectionEnd, "start");
+      return;
+    }
+
+    if (e.target.innerHTML === "DEL") {
+      e.preventDefault();
+      textArea.setRangeText("", textArea.selectionStart, textArea.selectionEnd + 1, "start");
+      return;
+    }
+
+    if (e.target.innerHTML === "Space") {
+      e.preventDefault();
+      textArea.setRangeText(" ", textArea.selectionStart, textArea.selectionEnd, "end");
+      return;
+    }
+
+    if (e.target.innerHTML === "Enter") {
+      e.preventDefault();
+      textArea.setRangeText("\n", textArea.selectionStart, textArea.selectionEnd, "end");
+      return;
+    }
+
+    if (e.target.innerHTML === "CapsLock") {
+      if (lang == "en") {
+        var enKeys = document.querySelectorAll(".eng");
+
+        var _iterator = _createForOfIteratorHelper(enKeys),
+            _step;
+
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var key = _step.value;
+            key.querySelector(".caseDown").classList.toggle("hidden");
+            key.querySelector(".caps").classList.toggle("hidden");
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
+      } else {
+        var _enKeys = document.querySelectorAll(".rus");
+
+        var _iterator2 = _createForOfIteratorHelper(_enKeys),
+            _step2;
+
+        try {
+          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+            var _key = _step2.value;
+
+            _key.querySelector(".caseDown").classList.toggle("hidden");
+
+            _key.querySelector(".caps").classList.toggle("hidden");
+          }
+        } catch (err) {
+          _iterator2.e(err);
+        } finally {
+          _iterator2.f();
+        }
+      }
+
+      return;
+    }
+
+    if (e.target.innerHTML === "Shift") {
+      //console.log(e.target);
+      if (lang == "en") {
+        var _enKeys2 = document.querySelectorAll(".eng");
+
+        var _iterator3 = _createForOfIteratorHelper(_enKeys2),
+            _step3;
+
+        try {
+          for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+            var _key2 = _step3.value;
+
+            if (_key2.querySelector(".caps").className === "caps") {
+              _key2.querySelector(".caseDown").className = "caseDown hidden";
+              _key2.querySelector(".caseUp").className = "caseUp hidden";
+              _key2.querySelector(".caps").className = "caps hidden";
+              _key2.querySelector(".shiftCaps").className = "shiftCaps";
+            } else {
+              _key2.querySelector(".caseDown").classList.toggle("hidden");
+
+              _key2.querySelector(".caseUp").classList.toggle("hidden");
+            }
+          }
+        } catch (err) {
+          _iterator3.e(err);
+        } finally {
+          _iterator3.f();
+        }
+      } else {
+        var _enKeys3 = document.querySelectorAll(".rus");
+
+        var _iterator4 = _createForOfIteratorHelper(_enKeys3),
+            _step4;
+
+        try {
+          for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+            var _key3 = _step4.value;
+
+            if (_key3.querySelector(".caps").className === "caps") {
+              _key3.querySelector(".caseDown").className = "caseDown hidden";
+              _key3.querySelector(".caseUp").className = "caseUp hidden";
+              _key3.querySelector(".caps").className = "caps hidden";
+              _key3.querySelector(".shiftCaps").className = "shiftCaps";
+            } else {
+              _key3.querySelector(".caseDown").classList.toggle("hidden");
+
+              _key3.querySelector(".caseUp").classList.toggle("hidden");
+            }
+          }
+        } catch (err) {
+          _iterator4.e(err);
+        } finally {
+          _iterator4.f();
+        }
+      }
+    }
+
+    return;
+    textArea.setRangeText(e.target.innerHTML, textArea.selectionStart, textArea.selectionEnd, "end"); //console.log(e.target.innerHTML);
+  });
+  document.addEventListener("mouseup", function (e) {
+    if (e.target.innerHTML === "Shift") {
+      //console.log(e.target);
+      if (lang == "en") {
+        var enKeys = document.querySelectorAll(".eng");
+
+        var _iterator5 = _createForOfIteratorHelper(enKeys),
+            _step5;
+
+        try {
+          for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+            var key = _step5.value;
+
+            if (key.querySelector(".caps").className === "caps hidden") {
+              key.querySelector(".caseDown").className = "caseDown hidden";
+              key.querySelector(".caseUp").className = "caseUp hidden";
+              key.querySelector(".caps").className = "caps";
+              key.querySelector(".shiftCaps").className = "shiftCaps hidden";
+            } else {
+              key.querySelector(".caseDown").className.toggle("caseDown hidden");
+              key.querySelector(".caseUp").className.toggle("caseUp hidden");
+            }
+          }
+        } catch (err) {
+          _iterator5.e(err);
+        } finally {
+          _iterator5.f();
+        }
+      } else {
+        var _enKeys4 = document.querySelectorAll(".rus");
+
+        var _iterator6 = _createForOfIteratorHelper(_enKeys4),
+            _step6;
+
+        try {
+          for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+            var _key4 = _step6.value;
+
+            if (_key4.querySelector(".caps").className === "caps hidden") {
+              _key4.querySelector(".caseDown").className = "caseDown hidden";
+              _key4.querySelector(".caseUp").className = "caseUp hidden";
+              _key4.querySelector(".caps").className = "caps";
+              _key4.querySelector(".shiftCaps").className = "shiftCaps hidden";
+            } else {
+              _key4.querySelector(".caseDown").className.toggle("caseDown hidden");
+
+              _key4.querySelector(".caseUp").className.toggle("caseUp hidden");
+            }
+          }
+        } catch (err) {
+          _iterator6.e(err);
+        } finally {
+          _iterator6.f();
+        }
+      }
+
+      return;
+    }
   }); //Checking keyboard shortcuts CtrlLeft + AltLeft
 
   function runOnKeys(func) {
-    for (var _len = arguments.length, codes = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      codes[_key - 1] = arguments[_key];
+    for (var _len = arguments.length, codes = new Array(_len > 1 ? _len - 1 : 0), _key5 = 1; _key5 < _len; _key5++) {
+      codes[_key5 - 1] = arguments[_key5];
     }
 
     var pressed = new Set();
     document.addEventListener("keydown", function (e) {
       pressed.add(e.code);
 
-      var _iterator = _createForOfIteratorHelper(codes),
-          _step;
+      var _iterator7 = _createForOfIteratorHelper(codes),
+          _step7;
 
       try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var code = _step.value;
+        for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+          var code = _step7.value;
 
           if (!pressed.has(code)) {
             return;
           }
         }
       } catch (err) {
-        _iterator.e(err);
+        _iterator7.e(err);
       } finally {
-        _iterator.f();
+        _iterator7.f();
       }
 
       pressed.clear();
@@ -1150,6 +1369,50 @@ window.onload = function () {
     });
     document.addEventListener("keyup", function (e) {
       pressed["delete"](e.code);
+
+      if (e.target.innerHTML === "Shift") {
+        console.log(e.target);
+
+        if (lang == "en") {
+          var enKeys = document.querySelectorAll(".eng");
+
+          var _iterator8 = _createForOfIteratorHelper(enKeys),
+              _step8;
+
+          try {
+            for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
+              var key = _step8.value;
+              key.querySelector(".caseUp").classList.toggle("hidden");
+              key.querySelector(".caseDown").classList.toggle("hidden");
+            }
+          } catch (err) {
+            _iterator8.e(err);
+          } finally {
+            _iterator8.f();
+          }
+        } else {
+          var _enKeys5 = document.querySelectorAll(".rus");
+
+          var _iterator9 = _createForOfIteratorHelper(_enKeys5),
+              _step9;
+
+          try {
+            for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
+              var _key6 = _step9.value;
+
+              _key6.querySelector(".caseUp").classList.toggle("hidden");
+
+              _key6.querySelector(".caseDown").classList.toggle("hidden");
+            }
+          } catch (err) {
+            _iterator9.e(err);
+          } finally {
+            _iterator9.f();
+          }
+        }
+
+        return;
+      }
     });
   }
 
@@ -1184,12 +1447,12 @@ window.onload = function () {
 
     console.log(lang);
 
-    var _iterator2 = _createForOfIteratorHelper(keys),
-        _step2;
+    var _iterator10 = _createForOfIteratorHelper(keys),
+        _step10;
 
     try {
-      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-        var key = _step2.value;
+      for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
+        var key = _step10.value;
         var spanRUS = key.querySelector(".rus");
         var spanENG = key.querySelector(".eng");
         spanRUS.classList.toggle("hidden");
@@ -1210,9 +1473,9 @@ window.onload = function () {
         }
       }
     } catch (err) {
-      _iterator2.e(err);
+      _iterator10.e(err);
     } finally {
-      _iterator2.f();
+      _iterator10.f();
     }
 
     lang = !lang;
